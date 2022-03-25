@@ -130,6 +130,8 @@ export async function createMainWindow(
       mainWindow,
     );
   });
+  
+  mainWindow.on('new-tab-with-url', (url) => createNewTab(url, true));
 
   if (options.counter) {
     setupCounter(options, mainWindow, setDockBadge);
