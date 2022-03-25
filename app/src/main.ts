@@ -187,6 +187,10 @@ app.on('window-all-closed', () => {
   }
 });
 
+app.on('open-url', (event, url) => {
+  mainWindow.emit('new-tab-with-url', url);
+});
+
 app.on('before-quit', () => {
   log.debug('app.before-quit');
   // not fired when the close button on the window is clicked
