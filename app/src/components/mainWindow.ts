@@ -130,7 +130,7 @@ export async function createMainWindow(
       mainWindow,
     );
   });
-  
+  // @ts-expect-error new-tab isn't in the type definition, but it does exist
   mainWindow.on('new-tab-with-url', (url: string) => createNewTab(
     windowOptions,
      setupNativefierWindow,
