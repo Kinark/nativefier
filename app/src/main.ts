@@ -187,7 +187,7 @@ app.on('window-all-closed', () => {
   }
 });
 
-app.on('open-url', (event, url) => {
+app.on('open-url', (event: any, url: string) => {
   mainWindow.emit('new-tab-with-url', url);
 });
 
