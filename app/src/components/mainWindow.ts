@@ -131,7 +131,13 @@ export async function createMainWindow(
     );
   });
   
-  mainWindow.on('new-tab-with-url', (url: string) => createNewTab(url, true));
+  mainWindow.on('new-tab-with-url', (url: string) => createNewTab(
+    windowOptions,
+     setupNativefierWindow,
+     url,
+     true,
+     mainWindow,
+  ));
 
   if (options.counter) {
     setupCounter(options, mainWindow, setDockBadge);
